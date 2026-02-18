@@ -1,0 +1,323 @@
+
+:root {
+    --bg-dark: #0a0a0a;
+    --text-main: #ffffff;
+    --text-muted: #b3b3b3;
+    --accent-color: #FF0080; 
+    --accent-gradient: linear-gradient(90deg, #7928CA, #FF0080); 
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-hover: rgba(255, 255, 255, 0.07);
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+
+.background-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: #7928CA;
+    filter: blur(150px);
+    border-radius: 50%;
+    top: -200px;
+    left: -200px;
+    opacity: 0.35;
+    z-index: -1;
+    animation: float 10s ease-in-out infinite alternate;
+}
+
+.background-glow-2 {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #FF0080;
+    filter: blur(160px);
+    border-radius: 50%;
+    bottom: -100px;
+    right: -100px;
+    opacity: 0.25;
+    z-index: -1;
+    animation: float 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
+}
+
+
+.main-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.social-icon {
+    color: var(--text-main); 
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.social-icon:hover {
+    color: #0077b5; 
+    opacity: 1;
+    transform: translateY(-2px); 
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.contact-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.phone-number {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.nav-btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeIn 1s ease-out;
+}
+
+.profile-frame {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 25px;
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--accent-gradient);
+    box-shadow: 0 0 40px rgba(121, 40, 202, 0.3);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-dark);
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 10px 0 15px;
+    color: var(--text-muted);
+}
+
+.gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+.location-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.05);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+
+.section-block {
+    margin-bottom: 40px;
+}
+
+.section-title h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 15px;
+    color: var(--text-main);
+}
+
+
+.tech-badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.tech-badges span {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+.tech-badges span:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 0, 128, 0.1);
+    transform: translateY(-2px);
+}
+
+
+.glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.about-card p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.glass-card h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.badge {
+    background: var(--accent-color);
+    color: white;
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.company {
+    color: var(--accent-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 5px 0 15px;
+}
+
+.description {
+    color: var(--text-muted);
+    margin: 0;
+}
+
+
+.job-list {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.job-list li {
+    margin-bottom: 5px;
+}
+
+
+.highlight-card {
+    background: linear-gradient(135deg, rgba(121, 40, 202, 0.08), rgba(255, 0, 128, 0.08));
+    border: 1px solid rgba(255, 0, 128, 0.2);
+}
+
+
+footer {
+    text-align: center;
+    padding: 50px 0 20px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--glass-border);
+    margin-top: 40px;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .contact-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h1 { font-size: 2.2rem; }
+    
+    .glass-card {
+        padding: 20px;
+    }
+}
